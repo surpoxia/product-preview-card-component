@@ -1,0 +1,140 @@
+:root {
+    --Dark_Cyan: hsl(158, 36%, 37%);
+    --Very_Dark_Cyan: hsl(156, 42%, 18%);
+    --Cream: hsl(30, 38%, 92%);
+    --Very_Dark_Blue: hsl(212, 21%, 14%);
+    --Dark_Grayish_Blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100svh;
+    height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: var(--Cream);
+}
+
+.container {
+    width: 600px;
+    height: 450px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--White);
+    border-radius: 9px;
+    overflow: hidden;
+    object-fit: contain;
+    .image {
+        width: 100%;
+        overflow: hidden;
+        object-fit: contain;
+        .image_desktop {
+            width: 100%;
+        } 
+        .image_mobile {
+            display: none;
+        }
+    }
+    .text {
+        margin: 2rem;
+        & h2 {
+            font-family: Montserrat;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: var(--Dark_Grayish_Blue);
+            letter-spacing: 0.3rem;
+            margin-bottom: 1rem;
+        }
+        & h1 {
+            font-family: Fraunces;
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .paragrapgh {
+            font-family: Montserrat;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .prices {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            .price_new {
+                font-family: Fraunces;
+                font-weight: 700;
+                font-size: 2rem;
+                color: var(--Dark_Cyan);
+                margin-right: 1.3rem;
+            }
+            .price_old {
+                font-family: Montserrat;
+                font-size: 0.8rem;
+                font-weight: 500;
+                text-decoration: line-through;
+            }
+        }
+        & button {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background-color: var(--Dark_Cyan);
+            border: none;
+            border-radius: 9px;
+            font-family: Montserrat;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--White);
+            gap: 0.5rem;
+            &:active {
+                background-color: var(--Very_Dark_Cyan);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        width: 343px;
+        height: 618px;
+        display: inline-block;
+        .image {
+            .image_desktop {
+                display: none;
+            }
+            .image_mobile {
+                display: block;
+                width: 100%;
+            }
+        }
+        .text {
+            margin: 1.5rem;
+            & h2 {
+                margin-bottom: 1rem;
+            }
+            & h1 {
+                margin-bottom: 1rem;
+            }
+            .paragrapgh {
+                margin-bottom: 1rem;
+            }
+            .prices {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
